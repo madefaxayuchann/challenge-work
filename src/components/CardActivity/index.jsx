@@ -35,7 +35,11 @@ const CardActivity = ({ id, index, title, date, onShowAlert }) => {
   return (
     <Fragment>
       <div onClick={onRedirectDetail} style={{ cursor: 'pointer' }}>
-        <div className="activity-item" data-cy={`activity-item${index}`}>
+        <div
+          id={`itemCard${index}`}
+          className="activity-item"
+          data-cy="activity-item"
+        >
           <p className="activity-item-title" data-cy="activity-item-title">
             {title}
           </p>

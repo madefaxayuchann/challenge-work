@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 
 import { updateActivity } from '../../redux/todo/todoSlice'
 import CardTodo from '../CardTodo'
+import Alert from '../Alert'
 import DropdownTodo from '../DropdownTodo'
 import ModalTodo from '../ModalTodo'
 import './DetailActivity.css'
@@ -16,6 +17,7 @@ const DetailActivity = ({ id, title, todos }) => {
 
   const [textEdit, setTextEdit] = useState('')
   const [textEditActive, setTextEditActive] = useState(false)
+  const [alertShow, setAlertShow] = useState(false)
 
   const [modalShow, setModalShow] = useState(false)
   const [filter, setFilter] = useState('new')
@@ -49,6 +51,13 @@ const DetailActivity = ({ id, title, todos }) => {
 
     return todo
   }, [todos, filter])
+
+  const onShowAlert = () => {
+    setAlertShow(true)
+    setTimeout(() => {
+      setAlertShow(false)
+    }, 1000)
+  }
 
   const onToggleModalShow = () => {
     setModalShow(prevValue => !prevValue)
@@ -102,18 +111,19 @@ const DetailActivity = ({ id, title, todos }) => {
                 }}
               />
             ) : (
-              <p
-                className="todo-title"
-                data-cy="todo-title"
-                onClick={() => {
-                  setTimeout(() => {
-                    ref.current.focus()
-                  }, 10)
-                  onToggleTextEdit()
-                }}
-              >
-                {textEdit}
-              </p>
+              <div data-cy="todo-title">
+                <p
+                  className="todo-title"
+                  onClick={() => {
+                    setTimeout(() => {
+                      ref.current.focus()
+                    }, 10)
+                    onToggleTextEdit()
+                  }}
+                >
+                  {textEdit}
+                </p>
+              </div>
             )}
             <img
               src="/assets/rename.svg"
@@ -132,8 +142,8 @@ const DetailActivity = ({ id, title, todos }) => {
               <DropdownTodo value={filter} onChangeValue={onChangeValue} />
             )}
             <button
-              className="todo-add-button"
               data-cy="todo-add-button"
+              className="todo-add-button"
               onClick={onToggleModalShow}
             >
               <img src="/assets/plus.svg" data-cy="tabler:plus" />
@@ -162,10 +172,13 @@ const DetailActivity = ({ id, title, todos }) => {
               index={index}
               title={todo.title}
               priority={todo.priority}
+              onShowAlert={onShowAlert}
             />
           ))
         )}
       </div>
+
+      <Alert show={alertShow} />
 
       <ModalTodo
         type="create"

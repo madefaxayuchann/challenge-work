@@ -6,8 +6,15 @@ import ModalDelete from '../ModalDelete'
 import ModalTodo from '../ModalTodo'
 import './CardTodo.css'
 
-const CardTodo = ({ id, groupId, index, title, checked, priority }) => {
-  console.log(priority)
+const CardTodo = ({
+  id,
+  groupId,
+  index,
+  title,
+  checked,
+  priority,
+  onShowAlert
+}) => {
   const classNamePriority = `card-todo-priority ${priority}`
 
   const dispatch = useDispatch()
@@ -55,13 +62,14 @@ const CardTodo = ({ id, groupId, index, title, checked, priority }) => {
     <div className="card-todo" data-cy={`todo-item${index}`}>
       <div className="card-todo-wrapper">
         <div className="card-todo-wrapper-left">
-          <input
-            className="todo-item-checkbox"
-            type="checkbox"
-            data-cy="todo-item-checkbox"
-            checked={checkbox}
-            onChange={onToggleCheckbox}
-          />
+          <div data-cy="todo-item-checkbox">
+            <input
+              className="todo-item-checkbox"
+              type="checkbox"
+              checked={checkbox}
+              onChange={onToggleCheckbox}
+            />
+          </div>
           <div
             className={classNamePriority}
             data-cy="todo-item-priority-indicator"
@@ -103,7 +111,10 @@ const CardTodo = ({ id, groupId, index, title, checked, priority }) => {
         title={title}
         show={modalDelete}
         onHide={() => onToggleModalShow('delete')}
-        onDelete={onDeleteTodo}
+        onDelete={() => {
+          onDeleteTodo()
+          onShowAlert()
+        }}
       />
     </div>
   )

@@ -7,7 +7,6 @@ import SelectPriority from '../SelectPriority'
 import './ModalTodo.css'
 
 const ModalTodo = props => {
-  console.log(props)
   const dispatch = useDispatch()
 
   const [name, setName] = useState('')
@@ -28,7 +27,6 @@ const ModalTodo = props => {
       title: name,
       priority: priority
     }
-    console.log(payload)
     if (props.type === 'create') {
       dispatch(createTodo({ ...payload, is_active: false }))
     }
@@ -69,13 +67,14 @@ const ModalTodo = props => {
       <Modal.Body>
         <label className="modal-add-name-title">NAMA LIST ITEM</label>
         <br />
-        <input
-          className="modal-add-name-input"
-          data-cy="modal-add-name-input"
-          placeholder="Tambahkan nama list item"
-          value={name || ''}
-          onChange={event => setName(event.target.value)}
-        />
+        <div data-cy="modal-add-name-input">
+          <input
+            className="modal-add-name-input"
+            placeholder="Tambahkan nama list item"
+            value={name || ''}
+            onChange={event => setName(event.target.value)}
+          />
+        </div>
 
         <label
           className="modal-add-priority-title"
@@ -84,17 +83,22 @@ const ModalTodo = props => {
           PRIORITY
         </label>
         <br />
-        <SelectPriority defaultValue={priority} onChangeValue={onChangeValue} />
+        <div data-cy="modal-add-priority-dropdown">
+          <SelectPriority
+            defaultValue={priority}
+            onChangeValue={onChangeValue}
+          />
+        </div>
       </Modal.Body>
 
       <Modal.Footer>
         <button
-          className="modal-add-save-button"
           data-cy="modal-add-save-button"
+          className="modal-add-save-button"
           disabled={!name}
           onClick={onCreateTodo}
         >
-          <p className="modal-add-save-title">Simpan</p>
+          Simpan
         </button>
       </Modal.Footer>
     </Modal>

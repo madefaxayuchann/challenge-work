@@ -6,11 +6,10 @@ const ModalDelete = props => {
     <Modal
       {...props}
       dialogClassName="modal-90w"
-      data-cy="modal-delete"
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Body>
+      <Modal.Body data-cy="modal-delete">
         <div className="modal-delete-wrapper">
           <img
             src="/assets/modal-delete-icon.svg"
@@ -29,8 +28,8 @@ const ModalDelete = props => {
               <p className="modal-delete-cancel-button-text">Batal</p>
             </button>
             <button
-              className="modal-delete-confirm-button"
               data-cy="modal-delete-confirm-button"
+              className="modal-delete-confirm-button"
               onClick={props.onDelete}
             >
               <p className="modal-delete-confirm-button-text">Hapus</p>

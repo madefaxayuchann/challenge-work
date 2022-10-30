@@ -1,5 +1,5 @@
 .modal-add-title {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600 !important;
   font-size: 18px;
@@ -8,7 +8,7 @@
 }
 
 .modal-add-name-title {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -17,7 +17,7 @@
 }
 
 .modal-add-priority-title {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 12px;
@@ -40,13 +40,19 @@
   background: #16abf8;
   border-radius: 45px;
   border: 0;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  color: #ffffff;
 }
 
 .modal-add-save-button:disabled {
   opacity: 0.2;
 }
 .modal-add-save-title {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
