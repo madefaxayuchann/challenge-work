@@ -65,6 +65,7 @@ const CardTodo = ({
           <div data-cy="todo-item-checkbox">
             <input
               className="todo-item-checkbox"
+              data-cy="todo-item-checkbox"
               type="checkbox"
               checked={checkbox}
               onChange={onToggleCheckbox}

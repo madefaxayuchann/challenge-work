@@ -47,12 +47,13 @@ const CardActivity = ({ id, index, title, date, onShowAlert }) => {
             <p className="activity-item-date" data-cy="activity-item-date">
               {formatDate}
             </p>
-            <img
-              src="/assets/trash.svg"
-              onClick={onToggleModalShow}
-              style={{ cursor: 'pointer' }}
-              data-cy="activity-item-delete-button"
-            />
+            <div data-cy="activity-item-delete-button">
+              <img
+                src="/assets/trash.svg"
+                onClick={onToggleModalShow}
+                style={{ cursor: 'pointer' }}
+              />
+            </div>
           </div>
         </div>
       </div>

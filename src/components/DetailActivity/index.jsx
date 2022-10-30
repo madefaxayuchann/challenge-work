@@ -56,7 +56,7 @@ const DetailActivity = ({ id, title, todos }) => {
     setAlertShow(true)
     setTimeout(() => {
       setAlertShow(false)
-    }, 1000)
+    }, 10000)
   }
 
   const onToggleModalShow = () => {

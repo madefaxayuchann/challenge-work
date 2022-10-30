@@ -6,7 +6,9 @@ const DropdownTodo = ({ value, onChangeValue }) => {
   return (
     <Dropdown data-cy="todo-sort-button">
       <Dropdown.Toggle className="toggle">
-        <img src="/assets/sort.svg" data-cy="tabler:arrows-sort" />
+        <button style={{ border:"none", backgroundColor: "transparent" }} data-cy="todo-sort-button">
+          <img src="/assets/sort.svg" data-cy="tabler:arrows-sort" />
+        </button>
       </Dropdown.Toggle>
 
       <Dropdown.Menu className="dropdown-menu">
