@@ -1,28 +1,28 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { createActivity } from "../../redux/todo/todoSlice";
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { createActivity } from '../../redux/todo/todoSlice'
 
-import Alert from "../Alert";
-import CardActivity from "../CardActivity";
-import "./Activity.css";
+import Alert from '../Alert'
+import CardActivity from '../CardActivity'
+import './Activity.css'
 
 const Activity = ({ data }) => {
-  const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.todo.createActivity.isLoading);
+  const dispatch = useDispatch()
+  const isLoading = useSelector(state => state.todo.createActivity.isLoading)
 
-  const [alertShow, setAlertShow] = useState(false);
+  const [alertShow, setAlertShow] = useState(false)
 
   const onAddActivity = () => {
-    const payload = { title: "New Activity", email: "ivan@skyshi.com" };
-    dispatch(createActivity(payload));
-  };
+    const payload = { title: 'New Activity', email: 'ivan@skyshi.com' }
+    dispatch(createActivity(payload))
+  }
 
   const onShowAlert = () => {
-    setAlertShow(true);
+    setAlertShow(true)
     setTimeout(() => {
-      setAlertShow(false);
-    }, 1000);
-  };
+      setAlertShow(false)
+    }, 1000)
+  }
 
   return (
     <div className="container">
@@ -63,9 +63,9 @@ const Activity = ({ data }) => {
               <CardActivity
                 key={activity.id}
                 id={activity.id}
-                index={index}
                 title={activity.title}
                 date={activity.created_at}
+                index={index}
                 onShowAlert={onShowAlert}
               />
             ))}
@@ -75,7 +75,7 @@ const Activity = ({ data }) => {
 
       <Alert show={alertShow} />
     </div>
-  );
-};
+  )
+}
 
-export default Activity;
+export default Activity

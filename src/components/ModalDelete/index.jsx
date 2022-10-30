@@ -28,8 +28,8 @@ const ModalDelete = props => {
               <p className="modal-delete-cancel-button-text">Batal</p>
             </button>
             <button
-              data-cy="modal-delete-confirm-button"
               className="modal-delete-confirm-button"
+              data-cy="modal-delete-confirm-button"
               onClick={props.onDelete}
             >
               <p className="modal-delete-confirm-button-text">Hapus</p>

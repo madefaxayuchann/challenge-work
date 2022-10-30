@@ -87,13 +87,13 @@ const CardTodo = ({
             onClick={() => onToggleModalShow('update')}
           />
         </div>
-
-        <img
-          src="/assets/trash.svg"
-          data-cy="todo-item-delete-button"
-          style={{ cursor: 'pointer' }}
-          onClick={() => onToggleModalShow('delete')}
-        />
+        <div data-cy="todo-item-delete-button">
+          <img
+            src="/assets/trash.svg"
+            style={{ cursor: 'pointer' }}
+            onClick={() => onToggleModalShow('delete')}
+          />
+        </div>
       </div>
 
       <ModalTodo

@@ -158,7 +158,7 @@ const DetailActivity = ({ id, title, todos }) => {
           <div
             className="activity-detail-image"
             onClick={onToggleModalShow}
-            data-cy="todo-empty-state.png"
+            data-cy="todo-empty-state"
           >
             <img src="/assets/todo-empty-state.png" />
           </div>
