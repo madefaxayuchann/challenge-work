@@ -9,7 +9,7 @@ const Home = () => {
   const activities = useSelector(state => state.todo.activity)
 
   useEffect(() => {
-    setTimeoutsetTimeout(() => {
+    setTimeout(() => {
       dispatch(getActivity())
     }, 5000)
   }, [])
