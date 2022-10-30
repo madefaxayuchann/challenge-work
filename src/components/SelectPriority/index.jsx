@@ -1,66 +1,66 @@
-import ReactSelect from "react-select";
-import "./SelectPriority.css";
+import ReactSelect from 'react-select'
+import './SelectPriority.css'
 
 const SelectPriority = ({ defaultValue, onChangeValue }) => {
   const OPTIONS_PRIORITY = [
     {
-      value: "very-high",
+      value: 'very-high',
       label: (
         <div className="label-wrapper">
           <div className="label-color very-high" />
           <p className="label-text">Very High</p>
         </div>
-      ),
+      )
     },
     {
-      value: "high",
+      value: 'high',
       label: (
         <div className="label-wrapper">
           <div className="label-color high" />
           <p className="label-text">High</p>
         </div>
-      ),
+      )
     },
     {
-      value: "normal",
+      value: 'normal',
       label: (
         <div className="label-wrapper">
           <div className="label-color normal" />
           <p className="label-text">Medium</p>
         </div>
-      ),
+      )
     },
     {
-      value: "low",
+      value: 'low',
       label: (
         <div className="label-wrapper">
           <div className="label-color low" />
           <p className="label-text">Low</p>
         </div>
-      ),
+      )
     },
     {
-      value: "very-low",
+      value: 'very-low',
       label: (
         <div className="label-wrapper">
           <div className="label-color very-low" />
           <p className="label-text">Very Low</p>
         </div>
-      ),
-    },
-  ];
+      )
+    }
+  ]
 
   return (
     <ReactSelect
       name="priority"
-      data-cy="modal-add-priority-dropdown"
+      data-cy="modal-add-priority-item"
       defaultValue={OPTIONS_PRIORITY.find(
-        (priority) => priority.value === defaultValue
+        priority => priority.value === defaultValue
       )}
       options={OPTIONS_PRIORITY}
-      onChange={(event) => onChangeValue(event.value)}
+      onChange={event => onChangeValue(event.value)}
     />
-  );
-};
+  )
+}
 
-export default SelectPriority;
+export default SelectPriority

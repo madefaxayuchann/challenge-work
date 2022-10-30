@@ -19,9 +19,9 @@
 .modal-delete-cancel-button {
   width: 150px;
   height: 54px;
-  background: #f4f4f4;
+  background: #f4f4f4 !important;
   border-radius: 45px !important;
-  border: 0;
+  border: 0 !important;
 }
 
 .modal-delete-cancel-button-text {
@@ -36,9 +36,9 @@
 .modal-delete-confirm-button {
   width: 150px;
   height: 54px;
-  background: #ed4c5c;
-  border-radius: 45px;
-  border: 0;
+  background: #ed4c5c !important;
+  border-radius: 45px !important;
+  border: 0 !important;
 }
 
 .modal-delete-confirm-button-text {

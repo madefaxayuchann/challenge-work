@@ -4,8 +4,8 @@ import './DropdownTodo.css'
 
 const DropdownTodo = ({ value, onChangeValue }) => {
   return (
-    <Dropdown data-cy="sort-parent">
-      <Dropdown.Toggle data-cy="todo-sort-button" className="toggle">
+    <Dropdown data-cy="todo-sort-button">
+      <Dropdown.Toggle className="toggle">
         <img src="/assets/sort.svg" data-cy="tabler:arrows-sort" />
       </Dropdown.Toggle>
 
@@ -27,7 +27,7 @@ const DropdownTodo = ({ value, onChangeValue }) => {
 
         <Dropdown.Item
           name="old"
-          data-cy="sort-oldest"
+          data-cy="sort-selection"
           onClick={event => onChangeValue(event.currentTarget.name)}
         >
           <div className="menu-wrapper">

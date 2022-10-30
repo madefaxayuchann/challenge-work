@@ -155,12 +155,11 @@ const DetailActivity = ({ id, title, todos }) => {
         </div>
 
         {todos?.length === 0 ? (
-          <div
-            className="activity-detail-image"
-            onClick={onToggleModalShow}
-            data-cy="todo-empty-state"
-          >
-            <img src="/assets/todo-empty-state.png" />
+          <div data-cy="todo-empty-state" className="activity-detail-image">
+            <img
+              src="/assets/todo-empty-state.png"
+              onClick={onToggleModalShow}
+            />
           </div>
         ) : (
           todosFilter?.map((todo, index) => (
@@ -178,7 +177,7 @@ const DetailActivity = ({ id, title, todos }) => {
         )}
       </div>
 
-      <Alert show={alertShow} />
+      <Alert show={alertShow} data="modal-information" />
 
       <ModalTodo
         type="create"

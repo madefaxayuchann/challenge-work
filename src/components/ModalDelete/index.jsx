@@ -1,4 +1,5 @@
 import Modal from 'react-bootstrap/Modal'
+import { Button } from 'react-bootstrap'
 import './ModalDelete.css'
 
 const ModalDelete = props => {
@@ -9,8 +10,8 @@ const ModalDelete = props => {
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      <Modal.Body data-cy="modal-delete">
-        <div className="modal-delete-wrapper">
+      <Modal.Body>
+        <div className="modal-delete-wrapper" data-cy="modal-delete">
           <img
             src="/assets/modal-delete-icon.svg"
             data-cy="modal-delete-icon"
@@ -20,20 +21,20 @@ const ModalDelete = props => {
             <strong>"{props.title}"</strong>
           </p>
           <div className="modal-delete-button-wrapper">
-            <button
-              className="modal-delete-cancel-button"
+            <Button
               data-cy="modal-delete-cancel-button"
+              className="modal-delete-cancel-button"
               onClick={props.onHide}
             >
               <p className="modal-delete-cancel-button-text">Batal</p>
-            </button>
-            <button
-              className="modal-delete-confirm-button"
+            </Button>
+            <Button
               data-cy="modal-delete-confirm-button"
+              className="modal-delete-confirm-button"
               onClick={props.onDelete}
             >
               <p className="modal-delete-confirm-button-text">Hapus</p>
-            </button>
+            </Button>
           </div>
         </div>
       </Modal.Body>

@@ -2,11 +2,11 @@ import React from 'react'
 import { Toast } from 'react-bootstrap'
 import './Alert.css'
 
-const Alert = ({ show }) => {
+const Alert = ({ show, data }) => {
   return (
-    <Toast className="modal-alert" show={show}>
+    <Toast className="modal-alert" show={show} data-cy={data}>
       <Toast.Body>
-        <div className="modal-alert-wrapper" data-cy="modal-information">
+        <div className="modal-alert-wrapper">
           <img
             src="/assets/modal-information-icon.svg"
             data-cy="modal-information-icon"

@@ -73,7 +73,7 @@ const Activity = ({ data }) => {
         )}
       </div>
 
-      <Alert show={alertShow} />
+      <Alert show={alertShow} data="modal-information" />
     </div>
   )
 }
