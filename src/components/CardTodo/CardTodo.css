@@ -19,7 +19,7 @@
 }
 
 .todo-item-title {
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -41,6 +41,9 @@
   border: 1px solid #c7c7c7;
 }
 
+.todo-icon {
+  background-image: url('../../../public/assets/trash.svg');
+}
 .very-high {
   background-color: #ed4c5c;
 }

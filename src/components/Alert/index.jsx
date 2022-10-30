@@ -4,8 +4,8 @@ import './Alert.css'
 
 const Alert = ({ show, data }) => {
   return (
-    <Toast className="modal-alert" show={show} data-cy={data}>
-      <Toast.Body>
+    <Toast className="modal-alert" show={show}>
+      <Toast.Body data-cy={data}>
         <div className="modal-alert-wrapper">
           <img
             src="/assets/modal-information-icon.svg"
