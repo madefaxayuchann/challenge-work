@@ -9,9 +9,7 @@ const Home = () => {
   const activities = useSelector(state => state.todo.activity)
 
   useEffect(() => {
-    setTimeout(() => {
-      dispatch(getActivity())
-    }, 5000)
+    dispatch(getActivity())
   }, [])
 
   return <Activity data={activities.data.data} />
